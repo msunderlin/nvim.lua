@@ -62,3 +62,4 @@ require'lspconfig'.phpactor.setup{
         ["language_server_psalm.enabled"] = false,
     }
 }
+require('phpactor') -- php lsp
