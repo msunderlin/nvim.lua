@@ -24,13 +24,28 @@ return require('packer').startup(function(use)
     requires = {'nvim-tree/nvim-web-devicons',
                 opt = true}
   }
+
+  use {'j-hui/fidget.nvim'}
+  use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+-- or                            , branch = '0.1.x',
+  requires = {'nvim-lua/plenary.nvim', 
+    'nvim-tree/nvim-web-devicons', -- optional, for file icons
+  }  
+}
+use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
   --[[ Theme ]] 
   use {'glepnir/dashboard-nvim'}
+  use {'neovim/nvim-lspconfig'}
+  use {'xiyaowong/nvim-transparent'}
   
   --[[ Colors ]]
 
   use {'folke/tokyonight.nvim'}
-  use {'neovim/nvim-lspconfig'}
 
   -- My plugins here
   -- use 'foo1/bar1.nvim'
