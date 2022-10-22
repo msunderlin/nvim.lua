@@ -66,6 +66,7 @@ require'lspconfig'.phpactor.setup{
 }
 require('phpactor') -- php lsp
 require('fidget').setup{}
+require('gitblame')
 
 -- [[ TRANSPARENT ]] -- 
 require("transparent").setup({
@@ -97,6 +98,10 @@ require('telescope').setup {
     }
   }
 }
+
+--[[ Comments ]] --
+require('Comment').setup()
+
 -- [[ TELESCOPE FZF ]] --
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
