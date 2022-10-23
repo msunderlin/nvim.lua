@@ -1,2 +1,3 @@
 site/pack/packer/start/packer.nvim
-.netwhist
+./.netwhist
+plugin/packer_compiled.lua

@@ -13,16 +13,15 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-    use {'wbthomason/packer.nvim',
-    'nvim-tree/nvim-tree.lua',
+    use {'wbthomason/packer.nvim'}
+    use {'nvim-tree/nvim-tree.lua',
     requires = {
         'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
 }
 use {
     'nvim-lualine/lualine.nvim',                     -- statusline
-    requires = {'nvim-tree/nvim-web-devicons',
-    opt = true}
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 }
 
 use {'j-hui/fidget.nvim'}
@@ -39,11 +38,20 @@ use {
     run = ':TSUpdate'
 }
 
-use {'f-person/git-blame.nvim'}
+-- use {'f-person/git-blame.nvim'}
 --[[ Theme ]] 
 use {'glepnir/dashboard-nvim'}
 use {'neovim/nvim-lspconfig'}
 use {'xiyaowong/nvim-transparent'}
+
+--[[ Git ]] -- 
+use {
+  'tanvirtin/vgit.nvim',
+  requires = {
+    'nvim-lua/plenary.nvim'
+  }
+}
+
 
 --[[ Colors ]]
 

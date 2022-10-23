@@ -52,10 +52,12 @@ vim.cmd[[colorscheme tokyonight-night]]
 
 require('lualine').setup {
    options = {
-    -- ... your lualine config
-    theme = 'tokyonight'
-    -- ... your lualine config
-  }
+    icons_enabled = true,
+    theme = 'tokyonight',
+  },
+  sections = { 
+      lualine_b = {'b:vgit_status'}
+  },
  }
 require'lspconfig'.phpactor.setup{
     on_attach = on_attach,
@@ -66,7 +68,8 @@ require'lspconfig'.phpactor.setup{
 }
 require('phpactor') -- php lsp
 require('fidget').setup{}
-require('gitblame')
+-- require('gitblame')
+require('vgit').setup()
 
 -- [[ TRANSPARENT ]] -- 
 require("transparent").setup({
